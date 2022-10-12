@@ -1,21 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { useIsMobile } from "../../../hooks";
 import { Button, Img, Wrap } from "../../core/ui";
 
 export default function Top() {
   const navigate = useNavigate();
-  const isMobile = useIsMobile();
 
   return (
     <TopWrap>
-      {!isMobile && <div style={{ height: 70 }} />}
       <Img
         src={"images/cake_movie.gif"}
         style={{
           transition: "opacity 1s",
           height: 600,
           minHeight: 500,
+          backgroundSize: "cover",
         }}
       />
 
