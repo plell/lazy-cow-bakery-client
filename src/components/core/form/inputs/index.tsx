@@ -263,5 +263,24 @@ const renderWeekPickerDay = (
     disabled = true;
   }
 
+  // 11/03 format
+  const closedDates = [
+    "11/24",
+    "11/25",
+    "12/25",
+    "12/26",
+    "12/27",
+    "12/28",
+    "12/29",
+    "12/30",
+    "12/31",
+    "01/01",
+  ];
+  const formattedDate = moment(date).format("MM/DD");
+
+  if (closedDates.includes(formattedDate)) {
+    disabled = true;
+  }
+
   return <PickersDay {...pickersDayProps} disabled={disabled} />;
 };
